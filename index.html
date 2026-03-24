@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Throstle Studio | Priscilla Santos</title>
+    <style>
+        :root {
+            --primary: #d47a4d; /* Cor terracota inspirada no sabiá-laranjeira */
+            --dark: #2c2c2c;
+            --light: #f9f9f9;
+            --gray: #666;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light);
+            color: var(--dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 40px 20px;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .logo span {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .content {
+            margin: 40px 0;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .contact-btn:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .lang-switcher {
+            margin-top: 50px;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            color: var(--gray);
+            cursor: pointer;
+            font-size: 0.9rem;
+            text-decoration: underline;
+            margin: 0 10px;
+        }
+
+        .lang-btn.active {
+            font-weight: bold;
+            color: var(--dark);
+            text-decoration: none;
+        }
+
+        [lang="en"] { display: none; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="logo">Throstle<span>Studio</span></div>
+        <div class="subtitle">Priscilla Santos | Layout Artist</div>
+
+        <div class="content" id="content-pt" lang="pt">
+            <p><strong>Precisão em cada página.</strong></p>
+            <p>Especializada em diagramação editorial de alta qualidade, focada em entregar materiais prontos para impressão com zero necessidade de revisão.</p>
+            <p>Nosso novo site está em desenvolvimento. Enquanto isso, sinta-se à vontade para entrar em contato para novos projetos.</p>
+            <a href="mailto:info@throstlestudio.com" class="contact-btn">ENTRAR EM CONTATO</a>
+        </div>
+
+        <div class="content" id="content-en" lang="en">
+            <p><strong>Precision in every page.</strong></p>
+            <p>Specialized in high-end editorial layout design, focused on delivering print-ready materials with zero revision overhead.</p>
+            <p>Our new website is under construction. In the meantime, feel free to reach out for new projects.</p>
+            <a href="mailto:info@throstlestudio.com" class="contact-btn">GET IN TOUCH</a>
+        </div>
+
+        <div class="lang-switcher">
+            <button class="lang-btn active" onclick="setLanguage('pt')">Português</button>
+            <button class="lang-btn" onclick="setLanguage('en')">English</button>
+        </div>
+    </div>
+
+    <script>
+        function setLanguage(lang) {
+            document.querySelectorAll('.content').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            
+            if (lang === 'pt') {
+                document.getElementById('content-pt').style.display = 'block';
+                document.querySelector('button[onclick="setLanguage(\'pt\')"]').classList.add('active');
+            } else {
+                document.getElementById('content-en').style.display = 'block';
+                document.querySelector('button[onclick="setLanguage(\'en\')"]').classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
