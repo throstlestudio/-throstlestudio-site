@@ -7,7 +7,7 @@
     <title>Throstle Studio</title>
     <style>
         :root {
-            --primary: #d47a4d; /* Cor terracota inspirada no sabiá-laranjeira */
+            --primary: #d47a4d;
             --dark: #2c2c2c;
             --light: #f9f9f9;
             --gray: #666;
@@ -29,6 +29,17 @@
         .container {
             max-width: 600px;
             padding: 40px 20px;
+        }
+
+        /* Estilos para o Logo */
+        .logo-container {
+            margin-bottom: 20px;
+        }
+
+        .main-logo {
+            width: 180px; /* Ajuste o tamanho conforme desejar */
+            height: auto;
+            border-radius: 50%; /* Mantém o formato circular se a imagem for quadrada */
         }
 
         .logo {
@@ -100,6 +111,10 @@
 <body>
 
     <div class="container">
+        <div class="logo-container">
+            <img src="logo_small.jpg" alt="Throstle Studio Logo" class="main-logo">
+        </div>
+
         <div class="logo">Throstle<span>Studio</span></div>
         <div class="subtitle">Priscilla Santos | Layout Artist</div>
 
@@ -116,6 +131,7 @@
             <p>Our new website is under construction. In the meantime, feel free to reach out for new projects.</p>
             <a href="mailto:info@throstlestudio.com" class="contact-btn">GET IN TOUCH</a>
         </div>
+
         <div class="lang-switcher">
             <button class="lang-btn active" onclick="setLanguage('pt')">Português</button>
             <button class="lang-btn" onclick="setLanguage('en')">English</button>
